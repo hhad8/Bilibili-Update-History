@@ -6,8 +6,6 @@
 
 > 本仓库为个人整理的资料归档，**仅用于学习和测试，与哔哩哔哩官方无关。** 仓库本身未提供或重新分发 APK 安装包，仅收录更新接口相关的响应数据。
 
----
-
 ## 关于更新接口
 
 公开资料记录的 Fawkes 更新检查接口为：
@@ -21,8 +19,6 @@ https://app.bilibili.com/x/v2/version/fawkes/upgrade
 当哔哩哔哩 Android 客户端启动并触发版本检查时，会向相关接口发送请求。若服务端判定有新版本需要提示升级时，返回的 JSON 会被客户端直接持久化保存在本地私有目录下，文件通常以当前目标版本的 `version_code` 命名，扩展名为 `.apk.infofawkes`（例如 `8300100.apk.infofawkes`）。
 
 这些文件是**证明特定历史构建存在的最直接官方证据**，包含官方服务器的原始发布时间戳、下载直链及校验哈希。
-
----
 
 ## 文件命名与内容
 
@@ -44,8 +40,6 @@ https://app.bilibili.com/x/v2/version/fawkes/upgrade
 文件名中的数字通常与 JSON 的 `version_code` 对应。**相同的版本名称可能对应不同的** **`version_code`** **、构建号或下载链接**，因此如需提交请保留原始文件名和响应内容，不要根据 `version` 字段重命名或合并记录。
 
 例如，8.30.0 的记录可能出现不同的版本代码和下载构建号。构建号暂时无法仅由版本名称或 `version_code` 推算。
-
----
 
 ## 缓存文件存放路径
 
@@ -76,8 +70,6 @@ https://app.bilibili.com/x/v2/version/fawkes/upgrade
   ```text
   /storage/emulated/0/Android/data/com.bilibili.app.in/files/update/
   ```
-
----
 
 ## 技术细节与发现
 
@@ -111,8 +103,6 @@ https://app.bilibili.com/x/v2/version/fawkes/upgrade
 
 另外目前仅存有一份 Play 版 `3.18.2` 的记录。曾观察到 Play 版目录可能只保留最新一次更新响应，但这一点尚未充分验证，推测 Play 版历史记录可能会自动覆盖/清理旧版本相关记录。
 
----
-
 ## 仓库目录规划
 
 为方便检索与维护，仓库按客户端类型及大版本分类存放：
@@ -130,8 +120,6 @@ https://app.bilibili.com/x/v2/version/fawkes/upgrade
 └── gp/             # Play 版 (com.bilibili.app.in)
     └── 3180200.apk.infofawkes
 ```
-
----
 
 ## 参与贡献（提交样本）
 
@@ -175,8 +163,6 @@ https://app.bilibili.com/x/v2/version/fawkes/upgrade
 
 - **Pull Request：**  按照大版本放入对应目录提交 PR。
 - **Issue：**  直接在 Issue 中上传 `.apk.infofawkes` 文件或粘贴完整 JSON 内容，可以注明文件来源设备的基本信息（如 32/64 位、机型等）。
-
----
 
 ## 免责声明
 
