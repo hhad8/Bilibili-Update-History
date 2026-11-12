@@ -147,11 +147,6 @@ https://app.bilibili.com/x/v2/version/fawkes/upgrade
    `/data/data/tv.danmaku.bili/files/update/`
 2. 未 Root 设备可检查外部存储目录：
    `/storage/emulated/0/Android/data/tv.danmaku.bili/files/update/`
-3. 使用 ADB 备份或提取（需开启调试）：
-
-   ```bash
-   adb shell "su -c 'ls -l /data/data/tv.danmaku.bili/files/update/'"
-   ```
 
 ### 提交前请：
 
